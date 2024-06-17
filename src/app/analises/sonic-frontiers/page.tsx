@@ -1,9 +1,10 @@
+import Heading1 from "@/Components/Heading1";
 
 
 const SonicReviewPage = () => {
     return (
         <>
-            <h1>Sonic Frontiers - Analise</h1>
+            <Heading1>Sonic Frontiers - Analise</Heading1>
             <p>Analise do Sonic Frontiers aqui</p>
         </>
     )

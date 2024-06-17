@@ -1,6 +1,11 @@
+import Heading1 from "@/Components/Heading1";
+
 
 export default function Home() {
+
   return (
-    <h1>Home Page</h1>
+    <>
+        <Heading1>Bem vindo(a) ao Análises de Jogos!</Heading1>
+    </>
   )
 }

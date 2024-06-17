@@ -1,10 +1,12 @@
+import Heading1 from "@/Components/Heading1";
 
 
 const AboutPage = () => {
     return (
         <>
-            <h1>Sobre o analise de jogos</h1>
+            <Heading1>Sobre o analise de jogos</Heading1>
             <p>Descricao do analise de jogos</p>
+            <a href="/">Home</a>
         </>
     )
 }
