@@ -1,3 +1,11 @@
+import { Montserrat } from "next/font/google";
+
+const montserrat = Montserrat({
+    weight:['700'],
+    subsets:['latin'],
+    display:'swap',
+    style:'normal'
+});
 
 interface Props {
     children: String;
@@ -5,7 +13,7 @@ interface Props {
 
 const Heading1 = ({children}: Props) => {
     return (
-        <h1 className="font-semibold text-2xl pb-1">{children}</h1>
+        <h1 className={`${montserrat.className} text-lg ml-1`}>{children}</h1>
     )
 }
 

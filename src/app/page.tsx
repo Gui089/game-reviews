@@ -1,6 +1,5 @@
 import Heading1 from "@/Components/Heading1";
 
-
 export default function Home() {
 
   return (
