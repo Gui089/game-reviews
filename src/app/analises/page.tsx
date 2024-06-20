@@ -3,11 +3,17 @@ import Image from "next/image";
 import Link from "next/link";
 import { Montserrat } from 'next/font/google';
 
+
 const montserrat = Montserrat({
     weight:['500'],
     subsets:['latin'],
     display:'swap'
 });
+
+const reviews = [
+    {title: 'Super Mario Bros. Wonder', path:'analises/super-mario-bross-wonder', img:'/images/super-mario-bros-wonder.jpg'},
+    {title:'Sonic Frontiers', path:'analises/sonic-frontiers', img:'/images/sonic-frontiers.jpg'}
+]
 
 const ReviewPage = () => {
     return (
@@ -15,30 +21,20 @@ const ReviewPage = () => {
             <Heading1>Análises</Heading1>
             <nav>
                 <ul className="flex-row flex mt-3">
-                    <li className="bg-slate-700 flex justify-center rounded-xl mr-4 text-center">
-                        <Link className="mb-3" href='analises/super-mario-bross-wonder'>
+                    {reviews.map(review=> 
+                        <li key={review.title} className="bg-slate-700 flex justify-center rounded-xl mr-4 text-center">
+                        <Link className="mb-3" href={review.path}>
                             <Image 
                                 className="mb-3 rounded-t-xl"
-                                src="/images/super-mario-bros-wonder.jpg" 
-                                alt="Logo SuperMario" 
+                                src={review.img} 
+                                alt=''
                                 width='320'
                                 height='180'
                                 />
-                            <h1 className={montserrat.className}>Super Mario Bros Wonder</h1>
+                            <h1 className={montserrat.className}>{review.title}</h1>
                         </Link>
-                    </li>
-                    <li className="bg-slate-700 flex justify-center rounded-xl text-center">
-                        <Link href='analises/sonic-frontiers'>
-                            <Image 
-                                className="mb-3 rounded-t-xl"
-                                src="/images/sonic-frontiers.jpg" 
-                                alt="Logo SuperMario" 
-                                width='320'
-                                height='180'
-                                />
-                            <h2 className={montserrat.className}>Sonic Frontiers</h2>
-                        </Link>
-                    </li>
+                      </li>
+                    )}
                 </ul>
             </nav>
         </>
